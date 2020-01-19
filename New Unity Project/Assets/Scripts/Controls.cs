@@ -4,18 +4,43 @@ using UnityEngine;
 
 public class Controls : MonoBehaviour
 {   
-    public Rigidbody rb;
+    public Rigidbody2D rb;
 
     public float spd;
 
+
+    private void Start()
+    {
+        rb = gameObject.GetComponent<Rigidbody2D>();
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.AddForce(0, 0, spd * Time.deltaTime);
+        Movement();
 
-       if (Input.GetKey("D"))
+ 
+    }
+
+    void Movement ()
+    {
+        if (Input.GetKey("d"))
         {
-            rb.AddForce(500 * Time.deltaTime, 0, 0);
+            rb.AddForce(transform.right * spd);
+        }
+
+        if (Input.GetKey("a"))
+        {
+            rb.AddForce(-transform.right * spd);
+        }
+
+        if (Input.GetKey("w"))
+        {
+            rb.AddForce(transform.up);
+        }
+
+        if (Input.GetKey("s"))
+        {
+            rb.AddForce(-transform.up * spd);
         }
     }
 }
