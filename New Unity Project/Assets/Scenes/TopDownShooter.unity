@@ -120,6 +120,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &172879052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 172879053}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &172879053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172879052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 6.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 351999916}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &351999912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -226,7 +256,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   missile: {fileID: 1490768108874216, guid: 53c54a58f50e3f946a07359f340491f3, type: 3}
+  firePoint: {fileID: 172879052}
   spd: 5
+--- !u!4 &351999916 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4445485423779112, guid: ceb2e69d6fcbbcf4eb36a02462f60ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 351999912}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1097110570
 GameObject:
   m_ObjectHideFlags: 0

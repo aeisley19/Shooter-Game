@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootProjectiles : MonoBehaviour
+public class Shoot : MonoBehaviour
 {
+    public float spd;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class ShootProjectiles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position += Vector3.up * spd * Time.deltaTime;
     }
 }

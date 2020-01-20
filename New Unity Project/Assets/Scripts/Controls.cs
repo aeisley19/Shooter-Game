@@ -6,6 +6,7 @@ public class Controls : MonoBehaviour
 {
     public Rigidbody2D rb;
     public GameObject missile;
+    public GameObject firePoint;
     public float spd;
 
 
@@ -17,6 +18,11 @@ public class Controls : MonoBehaviour
     void FixedUpdate()
     {
         Movement();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
     }
 
     //Controls player movement using transform.position.
@@ -41,10 +47,10 @@ public class Controls : MonoBehaviour
         {
             transform.position += Vector3.down * spd * Time.deltaTime;
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(missile, transform.position, transform.rotation);
-        }
+    void Shoot()
+    {
+        Instantiate(missile, firePoint.transform.position, firePoint.transform.rotation);
     }
 }
