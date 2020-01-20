@@ -25,22 +25,22 @@ public class Controls : MonoBehaviour
     {
         if (Input.GetKey("d"))
         {
-            rb.AddForce(transform.right * spd);
+            transform.position += Vector3.right * spd * Time.deltaTime;
         }
 
         if (Input.GetKey("a"))
         {
-            rb.AddForce(-transform.right * spd);
+            transform.position += Vector3.left * spd * Time.deltaTime;
         }
 
         if (Input.GetKey("w"))
         {
-            rb.AddForce(transform.up);
+            transform.position += Vector3.up * spd * Time.deltaTime;
         }
 
         if (Input.GetKey("s"))
         {
-            rb.AddForce(-transform.up * spd);
+            transform.position += Vector3.down * spd * Time.deltaTime;
         }
     }
 }
