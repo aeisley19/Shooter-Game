@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  missile: {fileID: 1490768108874216, guid: 53c54a58f50e3f946a07359f340491f3, type: 3}
   spd: 5
 --- !u!1 &1097110570
 GameObject:
