@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    public float spd;
+    public float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +15,11 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.up * spd * Time.deltaTime;
+        transform.position += Vector3.up * speed * Time.deltaTime;
+    }
+
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }
