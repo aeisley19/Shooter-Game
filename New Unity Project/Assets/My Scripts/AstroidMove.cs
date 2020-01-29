@@ -10,12 +10,19 @@ public class AstroidMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       Collider2D coll = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
     void Update()
+
     {
+        Debug.Log(Camera.main.pixelHeight);
         transform.position += Vector3.down * speed * Time.deltaTime;
+
+        if (transform.position.y < -Camera.main.orthographicSize - gameObject.transform.localScale.y)
+        {
+            Destroy (gameObject);
+        }
     }
 }

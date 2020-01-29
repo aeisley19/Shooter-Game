@@ -19,19 +19,18 @@ public class RandomSpawner : MonoBehaviour
         {
             Spawn();
             timer = 0;
-            Debug.Log(Camera.main.farClipPlane);
         }
     }
 
     //spawns a random astroid game object from between a random height between 600 and room height 
-    public void Spawn()
-    {
-        randomArray = Random.Range(0, astroid.Length); 
+        public void Spawn()
+        {
+            randomArray = Random.Range(0, astroid.Length); 
 
-        Vector3 screenPosition = Camera.main.ScreenToWorldPoint(
-new Vector3(Random.Range(0, Screen.width), Random.Range(600,
-Screen.height), Camera.main.farClipPlane / 2));
+            Vector3 screenPosition = Camera.main.ScreenToWorldPoint(
+    new Vector3(Random.Range(0, Screen.width), Random.Range(600,
+    Screen.height), Camera.main.farClipPlane / 2));
 
-        Instantiate(astroid[randomArray], screenPosition, Quaternion.identity);
-    }
+            Instantiate(astroid[randomArray], screenPosition, Quaternion.identity); 
+        }
 }
